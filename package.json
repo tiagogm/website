@@ -1,21 +1,37 @@
 {
-  "name": "tmoraisdev",
+  "name": "tiagogm-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "next export"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
+    "contentful": "^7.14.2",
+    "date-fns": "^2.12.0",
+    "highlight.js": "^9.18.1",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "9.3.4",
+    "normalize.css": "^8.0.1",
     "react": "16.13.1",
     "react-dom": "16.13.1",
-    "sass": "^1.26.3"
+    "remarkable": "^2.0.0",
+    "sass": "^1.26.3",
+    "typography": "^0.16.19",
+    "urljoin": "^0.1.5"
   },
   "devDependencies": {
     "@types/node": "^13.11.0",
     "@types/react": "^16.9.32",
+    "prettier": "2.0.4",
     "typescript": "^3.8.3"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "bracketSpacing": true,
+    "printWidth": 150
   }
 }

@@ -1,0 +1,100 @@
+.linkrainbow {
+  display: inline;
+  position: relative;
+  transition: all 0.5s ease;
+  text-decoration: none;
+  color: inherit;
+
+  & > * {
+    display: inline-block;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    height: 1px;
+    width: 0%;
+    background: #c0c0c0;
+    -webkit-transition: all ease 0.5s;
+    -moz-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+  }
+
+  &:hover:after {
+    animation-duration: 0.3s;
+    animation-fill-mode: forwards;
+    animation-name: slidein;
+  }
+}
+
+.linkrainbow.anim-variation--a {
+  animation-name: slidein-a;
+}
+
+.linkrainbow.anim-variation--b {
+  animation-name: slidein-b;
+}
+
+@keyframes slidein {
+  0% {
+    width: 0%;
+    background: #ffa700;
+  }
+
+  25% {
+    background: #0057e7;
+  }
+
+  50% {
+    background: #d62d20;
+  }
+
+  100% {
+    background: #008744;
+    width: 100%;
+  }
+}
+
+@keyframes slidein-a {
+  0% {
+    width: 0%;
+    background: #ffa700;
+  }
+
+  25% {
+    background: #0057e7;
+  }
+
+  50% {
+    background: #008744;
+  }
+
+  100% {
+    background: #d62d20;
+    width: 100%;
+  }
+}
+
+@keyframes slidein-b {
+  0% {
+    width: 0%;
+    background: #ffa700;
+  }
+
+  25% {
+    background: #0057e7;
+  }
+
+  50% {
+    background: #d62d20;
+  }
+
+  100% {
+    background: #ffa700;
+    width: 100%;
+  }
+}
