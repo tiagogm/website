@@ -7,5 +7,22 @@
       "CMS_PREVIEW_API_TOKEN": "@cms_preview_api_token",
       "CMS_SPACEID_SITE": "@cms_spaceid_site"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/blog/what-is-big-o",
+      "destination": "/blog/what-the-code-is-big-o",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/exploring-es6/",
+      "destination": "/blog",
+      "statusCode": 301
+    },
+    {
+      "source": "/blog/donet-on-linux/",
+      "destination": "/blog",
+      "statusCode": 301
+    }
+  ]
 }
