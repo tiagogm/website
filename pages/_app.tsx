@@ -1,9 +1,10 @@
 import App, { AppProps } from "next/app";
-import { logService } from "../services/logService";
 
 //nextjs requires global css to be requires in _app.tsx
 import "highlight.js/styles/vs2015.css";
 import "../styles/app.scss";
+
+import { logService } from "../services/logService";
 
 class MyApp extends App<AppProps> {
   render() {
