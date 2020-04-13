@@ -1,5 +1,6 @@
 import config from "../config";
 
+typeof window === "undefined" && require("now-logs")(config.NOWLOGS_SECRET);
 const Sentry = typeof window !== "undefined" ? require("@sentry/browser") : require("@sentry/node");
 Sentry.init({ dsn: config.SENTRY_DSN });
 

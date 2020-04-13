@@ -40,7 +40,7 @@ const getArticles = async (preview?: boolean): Promise<IBlogArticle[]> => {
     const responseJson = await response.json();
     const items = responseJson.items || [];
 
-    logService.log("blogService.getArticles - fetched", items.length);
+    logService.log(`blogService.getArticles - fetched ${items?.length} items`);
     return items.map((i) => i.fields);
   } catch (e) {
     logService.exception(e);
