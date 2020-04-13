@@ -5,4 +5,6 @@ export default {
   CMS_PREVIEW_API_TOKEN: process.env.CMS_PREVIEW_API_TOKEN,
   CMS_SPACEID_SITE: process.env.CMS_SPACEID_SITE,
   CMS_ENV: "master",
+  SENTRY_DSN: process.env.SENTRY_DSN,
+  NOWLOGS_SECRET: process.env.NOWLOGS_SECRET,
 };

@@ -1,6 +1,7 @@
 import fetch from "isomorphic-unfetch";
 import config from "../config";
 import urljoin from "urljoin";
+import { logService } from "./logService";
 
 /**
  * @see https://app.contentful.com/spaces/xxx/content_types/blogPost/fields
@@ -30,17 +31,19 @@ const fetchWithAuth = async (url, preview?: boolean) =>
  * but it's not available for free tier :(
  */
 const getArticles = async (preview?: boolean): Promise<IBlogArticle[]> => {
-  const url = urljoin(getBaseUrl(preview), `entries?content_type=${ContentType}&order=-fields.publishDate`);
-
-  console.log("blogService.getArticles Fetching..", url);
   try {
+    logService.log(`blogService.getArticles Call - preview: ${preview} | ${getBaseUrl(preview)}`);
+
+    const url = urljoin(getBaseUrl(preview), `entries?content_type=${ContentType}&order=-fields.publishDate`);
+    logService.log(`blogService.getArticles - Fetching from ${url}`);
     const response = await fetchWithAuth(url, preview);
     const responseJson = await response.json();
+    const items = responseJson.items || [];
 
-    console.log("blogService.getArticles fetched", responseJson);
-    return (responseJson.items || []).map((i) => i.fields);
+    logService.log(`blogService.getArticles - fetched ${items?.length} items`);
+    return items.map((i) => i.fields);
   } catch (e) {
-    console.error(`blogService.getArticles failed`, e);
+    logService.exception(e);
     return [];
   }
 };
@@ -53,7 +56,7 @@ const getArticleBySlug = async (slug: string, preview?: boolean): Promise<IBlogA
     const responseJson = await response.json();
     return (responseJson.items || []).map((i) => i.fields)[0];
   } catch (e) {
-    console.error(`blogService.getArticle failed`, e);
+    logService.exception(e);
     return null;
   }
 };

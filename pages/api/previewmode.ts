@@ -2,13 +2,16 @@
 // If this is located at pages/api/preview.js, then
 
 import { NextApiHandler } from "next";
+import { logService } from "../../services/logService";
 
 // open /api/preview from your browser.
 export default (({ query }, res) => {
   const { clear, url } = query;
 
   if (clear !== undefined) {
-    res.writeHead(307, { Location: "/" });
+    logService.log("API /previewmode - cleared");
+    res.clearPreviewData();
+    res.writeHead(307, { Location: "/blog" });
     res.end();
     return;
   }
@@ -30,6 +33,7 @@ export default (({ query }, res) => {
     return res.status(401).json({ message: "Invalid slug" });
   }
 
+  logService.log("API /previewmode - set");
   // Enable Preview Mode by setting the cookies
   res.setPreviewData({});
 

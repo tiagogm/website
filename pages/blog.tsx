@@ -4,6 +4,7 @@ import { GetStaticProps } from "next";
 import { LinkRainbow } from "../components/layout/LinkRainbow";
 import { DateUtils } from "../utils/date";
 import { Spacer } from "../components/layout/Spacer";
+import { logService } from "../services/logService";
 
 interface IBlogPageProps {
   articles: IBlogArticle[];
@@ -38,6 +39,7 @@ const BlogPage = ({ articles }) => (
 export const getStaticProps: GetStaticProps<IBlogPageProps> = async ({ params, preview, previewData }) => {
   const articles = await blogService.getArticles(preview);
 
+  logService.log(`Blog.getStaticProps - Fetched articles| preview: ${preview} | items: ${articles?.length}`);
   return {
     props: {
       articles,
