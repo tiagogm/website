@@ -3,12 +3,17 @@
     "env": {
       "CMS_API_DOMAIN": "@cms_api_domain",
       "CMS_API_TOKEN": "@cms_api_token",
-      "CMS_PREVIEW_DOMAIN": "@cms_preview_domain",
-      "CMS_PREVIEW_API_TOKEN": "@cms_preview_api_token",
       "CMS_SPACEID_SITE": "@cms_spaceid_site",
       "SENTRY_DSN": "@sentry_dsn",
       "NOWLOGS_SECRET": "@nowlogs_secret"
     }
+  },
+  "env": {
+    "CMS_PREVIEW_DOMAIN": "@cms_preview_domain",
+    "CMS_PREVIEW_API_TOKEN": "@cms_preview_api_token",
+    "CMS_SPACEID_SITE": "@cms_spaceid_site",
+    "SENTRY_DSN": "@sentry_dsn",
+    "NOWLOGS_SECRET": "@nowlogs_secret"
   },
   "redirects": [
     {

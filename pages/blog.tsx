@@ -27,7 +27,7 @@ const ArticleLink: React.FC<IBlogArticle> = ({ slug, title, publishDate }) => (
   </div>
 );
 
-const BlogPage = ({ articles }) => (
+const BlogPage: React.FC<IBlogPageProps> = ({ articles }) => (
   <Layout>
     <Layout.Title space={64}>Articles</Layout.Title>
     <Layout.Main space={128}>{articles.map(ArticleLink)}</Layout.Main>
@@ -35,7 +35,7 @@ const BlogPage = ({ articles }) => (
   </Layout>
 );
 
-export const getStaticProps: GetStaticProps<IBlogPageProps> = async ({ params, preview, previewData }) => {
+export const getStaticProps: GetStaticProps<IBlogPageProps> = async ({ preview }) => {
   const articles = await blogService.getArticles(preview);
 
   logService.log(`Blog.getStaticProps - Fetched articles| preview: ${preview} | items: ${articles?.length}`);
