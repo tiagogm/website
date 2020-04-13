@@ -3,7 +3,6 @@ import blogService, { IBlogArticle } from "../services/blogService";
 import { GetStaticProps } from "next";
 import { LinkRainbow } from "../components/layout/LinkRainbow";
 import { DateUtils } from "../utils/date";
-import { Spacer } from "../components/layout/Spacer";
 import { logService } from "../services/logService";
 
 interface IBlogPageProps {
