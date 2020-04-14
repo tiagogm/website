@@ -4,7 +4,7 @@ export const typography = new Typography({
   baseFontSize: "16px",
   baseLineHeight: 1.5,
   headerFontFamily: ["Raleway", "Helvetica Neue", "Segoe UI", "Helvetica", "Arial", "sans-serif"],
-  bodyFontFamily: ["Merriweather", "serif"],
+  bodyFontFamily: ["Merriweather", "Georgia", "serif"],
   headerWeight: "300",
   bodyWeight: "300",
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
