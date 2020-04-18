@@ -6,19 +6,39 @@ export const ContactLinks = () => (
   <ul className={`unstyled ${styles.contactlinks}`}>
     <li>
       <IconEmail />
-      Email: <a href="mailto:rpm.tiago@gmail.com">rpm.tiago@gmail.com</a>
+      <span>
+        Email:
+        <a href="mailto:rpm.tiago@gmail.com" aria-label="email link" rel="noopener">
+          rpm.tiago@gmail.com
+        </a>
+      </span>
     </li>
     <li>
       <IconGithub />
-      Github: <a href="https://github.com/tiagogm">/tiagogm</a>
+      <span>
+        Github:
+        <a href="https://github.com/tiagogm" aria-label="github profile" rel="noopener">
+          /tiagogm
+        </a>
+      </span>
     </li>
     <li>
       <IconLinkedin />
-      Linkedin: <a href="https://www.linkedin.com/in/tmorais/">/in/tmorais</a>
+      <span>
+        Linkedin:
+        <a href="https://www.linkedin.com/in/tmorais/" aria-label="linkedin profile" rel="noopener">
+          /in/tmorais
+        </a>
+      </span>
     </li>
     <li>
       <IconTwitter />
-      Twitter: <a href="https://twitter.com/_tiagogm">_tiagogm</a>
+      <span>
+        Twitter:
+        <a href="https://twitter.com/_tiagogm" aria-label="twitter profile">
+          _tiagogm
+        </a>
+      </span>
     </li>
   </ul>
 );

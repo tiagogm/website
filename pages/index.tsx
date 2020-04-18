@@ -7,7 +7,7 @@ import { MyPhoto } from "../components/home/MyPhoto";
 const HomePage = () => (
   <Layout>
     <Layout.Main>
-      <MyPhoto size={80} src="/img/profile2.png" alt="Tiago Morais" />
+      <MyPhoto size={80} path="/img/profile/profile2" alt="Tiago Morais" />
       <Spacer size={48} />
       <div>
         <h1 className="text-center">Tiago Morais</h1>
