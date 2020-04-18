@@ -28,7 +28,7 @@ const BlogPage: React.FC<IBlogPageProps> = ({ slug, title, body, publishDate }) 
 
 export const getStaticProps: GetStaticProps<IBlogPageProps> = async ({ params, preview }) => {
   const { slug } = params;
-  const article = await blogService.getArticleBySlug(slug as string, preview);
+  const article = await blogService.fetchArticleBySlug(slug as string, preview);
   return {
     props: {
       ...article,
@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps<IBlogPageProps> = async ({ params, p
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const articles = await blogService.getArticles();
+  const articles = await blogService.fetchArticles();
   const paths = articles.map(({ slug }) => `/blog/${slug}`);
 
   return {

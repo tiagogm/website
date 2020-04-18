@@ -36,7 +36,7 @@ const BlogPage: React.FC<IBlogPageProps> = ({ articles }) => (
 );
 
 export const getStaticProps: GetStaticProps<IBlogPageProps> = async ({ preview }) => {
-  const articles = await blogService.getArticles(preview);
+  const articles = await blogService.fetchArticles(preview);
 
   logService.log(`Blog.getStaticProps - Fetched articles| preview: ${preview} | items: ${articles?.length}`);
   return {
