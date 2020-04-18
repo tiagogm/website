@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "npm run dev",
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "serve": "next start",
     "export": "next export"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@contentful/rich-text-types": "^14.1.0",
     "@sentry/node": "^5.15.4",
     "classnames": "^2.2.6",
     "contentful": "^7.14.2",
