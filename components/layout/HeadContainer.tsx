@@ -5,15 +5,16 @@ import Head from "next/head";
 import { typography } from "../../utils/typography";
 
 const seo = {
-  title: "Tiago Morais // Software development thoughts and musings",
+  title: "Tiago Morais // Software development thoughts and notes",
   ogUrl: "https://tiagogm.dev",
+  description: "My personal site and blog about software development thoughts and notes",
 };
 
 export interface ISEOProps {
   description?: string;
 }
 
-export const HeadContainer: React.SFC<ISEOProps> = ({ description }) => {
+export const HeadContainer: React.SFC<ISEOProps> = ({ description = seo.description }) => {
   return (
     <Head>
       <title>{seo.title}</title>
@@ -39,6 +40,7 @@ export const HeadContainer: React.SFC<ISEOProps> = ({ description }) => {
       <link rel="canonical" href={seo.ogUrl} />
       <link rel="icon" href="/favicon.ico" />
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+      <link rel="preconnect" href="https://www.google-analytics.com" />
 
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39053104-1"></script>
@@ -48,12 +50,28 @@ export const HeadContainer: React.SFC<ISEOProps> = ({ description }) => {
         }}
       />
 
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+        WebFontConfig = {
+          google: { families: [ 'Raleway:300,400,500','Merriweather:300,400,400i,700,700i&display=swap' ] }
+        };
+        (function(d) {
+            var wf = d.createElement('script'), s = d.scripts[0];
+            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+            wf.async = true;
+            s.parentNode.insertBefore(wf, s);
+        })(document);
+      `,
+        }}
+      />
+
       {/* todo: self host this for perf gains  */}
-      <link
+      {/* <link
         href="https://fonts.googleapis.com/css?family=Raleway:300,400,500|Merriweather:300,400,400i,700,700i&display=swap"
         rel="stylesheet"
         type="text/css"
-      ></link>
+      ></link> */}
 
       {/* react-typography not working, prob a nextjs incompat */}
       <style>{`${typography.toString()}`}</style>
