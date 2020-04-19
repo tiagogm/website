@@ -1,7 +1,7 @@
 import cx from "classnames";
 import styles from "./Spacer.module.scss";
 
-export type Scale = 0 | 8 | 16 | 24 | 32 | 40 | 48 | 56 | 64 | 128;
+export type Scale = 0 | 8 | 16 | 24 | 32 | 40 | 48 | 56 | 64 | 72 | 80 | 128;
 
 interface ISpacerProps {
   size: Scale;
