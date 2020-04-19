@@ -1,17 +1,18 @@
 interface IMyPhotoProps {
   size: number;
-  path: string;
+  url: string;
   alt: string;
 }
 
-export const MyPhoto: React.FC<IMyPhotoProps> = ({ size, path, alt }) => (
+const imgParams = (url: string, size: number, otherParams?: string) => `${url}?w=${size * 2}${otherParams || ""}`;
+
+export const MyPhoto: React.FC<IMyPhotoProps> = ({ size, url, alt }) => (
   <div className="text-center">
-    {/* <img src={src} alt={alt} /> */}
     <picture>
-      <source type="image/webp" srcSet={`${path}.webp`} />
-      <img src={`${path}.jpg`} alt={alt} />
+      <source type="image/webp" srcSet={imgParams(url, size, `&fm=webp`)} />
+      <img src={imgParams(url, size)} alt={alt} />
     </picture>
-    {/* texting jsx - so I don't have to create a whole full component (separate css file) for a basic case */}
+    {/* texting jsx - so I don't have to create a whole full component (separate css file) for a basic case, single file components style */}
     <style jsx>{`
       img {
         width: ${size}px;
