@@ -5,7 +5,7 @@ import styles from "./Header.module.scss";
 export const Header: React.FC<{ to?: string }> = ({ to = "/" }) => (
   <header>
     <Link href={to}>
-      <p className={styles.name}>//tiagogm</p>
+      <a className={styles.name}>//tiagogm</a>
     </Link>
     <Spacer size={48} />
   </header>
