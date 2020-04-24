@@ -7,6 +7,8 @@ export interface IBlogArticle {
   body: string;
   description: string;
   publishDate: string;
+  externalLink: string;
+  externalSource: string;
 }
 
 const BlogContentType = "blogPost";

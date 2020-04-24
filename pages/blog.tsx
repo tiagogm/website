@@ -9,11 +9,20 @@ interface IBlogPageProps {
   articles: IBlogArticle[];
 }
 
-const ArticleLink: React.FC<IBlogArticle> = ({ slug, title, publishDate }) => (
+interface IBlogArticleProps extends IBlogArticle {
+  source?: string;
+}
+
+const ArticleLink: React.FC<IBlogArticleProps> = ({ slug, title, publishDate, externalSource, externalLink }) => (
   <div key={slug} className="article-link">
     <h4>
-      <LinkRainbow to={`blog/${slug}`}>
+      <LinkRainbow to={externalLink || `blog/${slug}`}>
         <span className="article-link__date">{DateUtils.IsoToStr(publishDate)}</span>
+        {externalSource && (
+          <span className="article-link__source">
+            <b>{externalSource} //</b>
+          </span>
+        )}
         <span className="article-link__title">{title}</span>
       </LinkRainbow>
     </h4>
@@ -22,6 +31,9 @@ const ArticleLink: React.FC<IBlogArticle> = ({ slug, title, publishDate }) => (
         width: 120px;
         display: inline-block;
         color: #c0c0c0;
+      }
+      .article-link__source {
+        margin-right: 0.5rem;
       }
     `}</style>
   </div>

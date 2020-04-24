@@ -14,10 +14,13 @@ export const LinkRainbow: React.FC<ILinkRainbowProps> = ({ className, to, intent
     [styles[`anim-variation--${variation}`]]: !!variation,
     [styles[`linkrainbow--${intent}`]]: !!intent,
   });
+  const external = to.includes("http");
 
   return (
-    <Link href={to}>
-      <a className={cls}>{children}</a>
+    <Link href={to} prefetch={!external}>
+      <a className={cls} target={external ? "_blank" : ""} rel={external ? "noopener" : ""}>
+        {children}
+      </a>
     </Link>
   );
 };
