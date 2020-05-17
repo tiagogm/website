@@ -15,7 +15,9 @@
     "SENTRY_DSN": "@sentry_dsn",
     "NOWLOGS_SECRET": "@nowlogs_secret"
   },
+  "trailingSlash": true,
   "redirects": [
+    { "source": "/blog", "destination": "/notes" },
     { "source": "/blog/(.*)", "destination": "/notes/$1" },
     {
       "source": "/blog/what-is-big-o(/)?",
