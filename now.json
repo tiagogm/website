@@ -20,17 +20,17 @@
     { "source": "/blog", "destination": "/notes" },
     { "source": "/blog/(.*)", "destination": "/notes/$1" },
     {
-      "source": "/blog/what-is-big-o(/)?",
+      "source": "/notes/what-is-big-o(/)?",
       "destination": "/notes/what-the-code-is-big-o",
       "statusCode": 301
     },
     {
-      "source": "/blog/exploring-es6(/)?",
+      "source": "/notes/exploring-es6(/)?",
       "destination": "/notes",
       "statusCode": 301
     },
     {
-      "source": "/blog/donet-on-linux(/)?",
+      "source": "/notes/donet-on-linux(/)?",
       "destination": "/notes",
       "statusCode": 301
     }
