@@ -16,19 +16,20 @@
     "NOWLOGS_SECRET": "@nowlogs_secret"
   },
   "redirects": [
+    { "source": "/blog/(.*)", "destination": "/notes/$1" },
     {
       "source": "/blog/what-is-big-o(/)?",
-      "destination": "/blog/what-the-code-is-big-o",
+      "destination": "/notes/what-the-code-is-big-o",
       "statusCode": 301
     },
     {
       "source": "/blog/exploring-es6(/)?",
-      "destination": "/blog",
+      "destination": "/notes",
       "statusCode": 301
     },
     {
       "source": "/blog/donet-on-linux(/)?",
-      "destination": "/blog",
+      "destination": "/notes",
       "statusCode": 301
     }
   ]
