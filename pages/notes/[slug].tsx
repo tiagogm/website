@@ -38,7 +38,7 @@ export const getStaticProps: GetStaticProps<INotesPageProps> = async ({ params, 
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const articles = await blogService.fetchArticles();
-  const paths = articles.map(({ slug }) => `/blog/${slug}`);
+  const paths = articles.map(({ slug }) => `/notes/${slug}`);
 
   return {
     paths,
