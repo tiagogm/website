@@ -39,9 +39,6 @@ const ArticleLink: React.FC<IBlogArticleProps> = ({ slug, title, publishDate, ex
   </div>
 );
 
-/**
- * Deprecated - Moved to /notes via 301
- */
 const BlogPage: React.FC<IBlogPageProps> = ({ articles }) => (
   <Layout>
     <Layout.Title space={64}>Notes</Layout.Title>

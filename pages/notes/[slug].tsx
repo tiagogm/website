@@ -4,7 +4,7 @@ import blogService, { IBlogArticle } from "../../services/blogService";
 import { markdownUtils } from "../../utils/markdown";
 import { DateUtils } from "../../utils/date";
 
-interface IBlogPageProps extends IBlogArticle {}
+interface INotesPageProps extends IBlogArticle {}
 
 /**
  * dangerouslySetInnerHTML is not ideal, improve later
@@ -13,10 +13,7 @@ const RenderMarkdown: React.FC<{ content: string }> = ({ content }) => {
   return <div dangerouslySetInnerHTML={{ __html: markdownUtils.parseToHTML(content) }}></div>;
 };
 
-/**
- * Deprecated - Moved to /notes/** via 301
- */
-const BlogPage: React.FC<IBlogPageProps> = ({ slug, title, body, publishDate }) => {
+const NotesPage: React.FC<INotesPageProps> = ({ slug, title, body, publishDate }) => {
   return (
     <Layout space={0}>
       <Layout.Title space={8}>{title}</Layout.Title>
@@ -29,7 +26,7 @@ const BlogPage: React.FC<IBlogPageProps> = ({ slug, title, body, publishDate }) 
   );
 };
 
-export const getStaticProps: GetStaticProps<IBlogPageProps> = async ({ params, preview }) => {
+export const getStaticProps: GetStaticProps<INotesPageProps> = async ({ params, preview }) => {
   const { slug } = params;
   const article = await blogService.fetchArticleBySlug(slug as string, preview);
   return {
@@ -49,4 +46,4 @@ export const getStaticPaths: GetStaticPaths = async () => {
   };
 };
 
-export default BlogPage;
+export default NotesPage;
