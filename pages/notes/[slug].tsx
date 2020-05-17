@@ -21,7 +21,7 @@ const NotesPage: React.FC<INotesPageProps> = ({ slug, title, body, publishDate }
       <Layout.Main>
         <RenderMarkdown content={body} />
       </Layout.Main>
-      <Layout.LinkBack to="/blog" />
+      <Layout.LinkBack to="/notes" />
     </Layout>
   );
 };
