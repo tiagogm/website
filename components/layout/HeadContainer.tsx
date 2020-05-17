@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import { useRouter } from "next/router";
 // Best practice is to have a typography module
 // where you define your theme.
 import { typography } from "../../utils/typography";
@@ -14,7 +15,15 @@ export interface ISEOProps {
   description?: string;
 }
 
+const getCannonical = (path: string) => {
+  const qsIndx = path.indexOf("?") > -1 ? path.indexOf("?") : undefined;
+  return `${seo.ogUrl}${path.slice(0, qsIndx)}`;
+};
+
 export const HeadContainer: React.SFC<ISEOProps> = ({ description = seo.description }) => {
+  const { asPath } = useRouter();
+  const canonicalUrl = getCannonical(asPath);
+
   return (
     <Head>
       <title>{seo.title}</title>
@@ -37,7 +46,7 @@ export const HeadContainer: React.SFC<ISEOProps> = ({ description = seo.descript
       {/* if we use css-in-js instead of css modules we can pull this from a theme.ts */}
       <meta name="theme-color" content="#03579e" />
 
-      <link rel="canonical" href={seo.ogUrl} />
+      <link rel="canonical" href={canonicalUrl} />
       <link rel="icon" href="/favicon.ico" />
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
       <link rel="preconnect" href="https://www.google-analytics.com" />
