@@ -1,4 +1,3 @@
-import fetch from "isomorphic-unfetch";
 import config from "../config";
 import urljoin from "urljoin";
 import { logService } from "./logService";

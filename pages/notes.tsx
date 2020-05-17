@@ -16,7 +16,7 @@ interface IBlogArticleProps extends IBlogArticle {
 const ArticleLink: React.FC<IBlogArticleProps> = ({ slug, title, publishDate, externalSource, externalLink }) => (
   <div key={slug} className="article-link">
     <h4>
-      <LinkRainbow to={externalLink || `blog/${slug}`}>
+      <LinkRainbow to={externalLink || `notes/${slug}`}>
         <span className="article-link__date">{DateUtils.IsoToStr(publishDate)}</span>
         {externalSource && (
           <span className="article-link__source">
@@ -39,9 +39,6 @@ const ArticleLink: React.FC<IBlogArticleProps> = ({ slug, title, publishDate, ex
   </div>
 );
 
-/**
- * Deprecated - Moved to /notes via 301
- */
 const BlogPage: React.FC<IBlogPageProps> = ({ articles }) => (
   <Layout>
     <Layout.Title space={64}>Notes</Layout.Title>

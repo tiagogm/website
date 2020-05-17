@@ -11,7 +11,7 @@ export default (({ query }, res) => {
   if (clear !== undefined) {
     logService.log("API /previewmode - cleared");
     res.clearPreviewData();
-    res.writeHead(307, { Location: "/blog" });
+    res.writeHead(307, { Location: "/notes" });
     res.end();
     return;
   }

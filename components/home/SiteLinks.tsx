@@ -6,12 +6,12 @@ const Links = [
     title: "About me",
   },
   {
-    url: "/blog",
-    title: "Blog",
-  },
-  {
     url: "/contacts",
     title: "Contacts",
+  },
+  {
+    url: "/notes",
+    title: "Notes on software",
   },
 ];
 
