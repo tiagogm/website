@@ -4,7 +4,7 @@ import App, { AppProps } from "next/app";
 import "highlight.js/styles/vs2015.css";
 import "../styles/app.scss";
 
-import { logService } from "../services/logService";
+import { logService } from "@/services/logService";
 
 class MyApp extends App<AppProps> {
   render() {

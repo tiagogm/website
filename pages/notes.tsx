@@ -1,9 +1,9 @@
-import { Layout } from "../components/layout/Layout";
-import blogService, { IBlogArticle } from "../services/blogService";
 import { GetStaticProps } from "next";
-import { LinkRainbow } from "../components/layout/LinkRainbow";
-import { DateUtils } from "../utils/date";
-import { logService } from "../services/logService";
+import { Layout } from "@/components/layout/Layout";
+import blogService, { IBlogArticle } from "@/services/blogService";
+import { LinkRainbow } from "@/components/layout/LinkRainbow";
+import { DateUtils } from "@/utils/date";
+import { logService } from "@/services/logService";
 
 interface IBlogPageProps {
   articles: IBlogArticle[];

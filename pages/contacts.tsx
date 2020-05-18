@@ -1,5 +1,5 @@
-import { Layout } from "../components/layout/Layout";
-import { ContactLinks } from "../components/contacts/ContactLinks/ContactLinks";
+import { Layout } from "@/components/layout/Layout";
+import { ContactLinks } from "@/components/contacts/ContactLinks/ContactLinks";
 
 const ContactsPage = () => (
   <Layout>

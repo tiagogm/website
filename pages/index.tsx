@@ -1,9 +1,9 @@
-import { Layout } from "../components/layout/Layout";
-import { Spacer } from "../components/layout/Spacer";
-import { SocialLinks } from "../components/home/SocialLinks";
-import { SiteLinks } from "../components/home/SiteLinks";
-import { MyPhoto } from "../components/home/MyPhoto";
-import { fetchEntryBySlug } from "../services/contentService";
+import { Layout } from "@/components/layout/Layout";
+import { Spacer } from "@/components/layout/Spacer";
+import { SocialLinks } from "@/components/home/SocialLinks";
+import { SiteLinks } from "@/components/home/SiteLinks";
+import { MyPhoto } from "@/components/home/MyPhoto";
+import { fetchEntryBySlug } from "@/services/contentService";
 import { GetStaticProps } from "next";
 
 interface IHomePageContent {

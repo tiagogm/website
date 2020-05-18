@@ -1,4 +1,4 @@
-import { IconGithub, IconLinkedin, IconTwitter } from "../../Icons";
+import { IconGithub, IconLinkedin, IconTwitter } from "@/components/Icons";
 import styles from "./SocialLinks.module.scss";
 
 export const SocialLinks = () => (

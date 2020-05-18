@@ -1,7 +1,7 @@
-import { Layout } from "../components/layout/Layout";
+import { Layout } from "@/components/layout/Layout";
 import { GetStaticProps } from "next";
-import { fetchEntryBySlug } from "../services/contentService";
-import { RichText } from "../components/content/RichText/RichText";
+import { fetchEntryBySlug } from "@/services/contentService";
+import { RichText } from "@/components/content/RichText/RichText";
 
 interface IAboutContent {
   title: string;

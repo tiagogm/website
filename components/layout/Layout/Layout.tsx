@@ -1,7 +1,7 @@
-import { HeadContainer } from "../HeadContainer";
-import { LinkRainbow } from "../LinkRainbow";
-import { Spacer, Scale } from "../Spacer";
-import { Header } from "../Header";
+import { HeadContainer } from "@/components/layout/HeadContainer";
+import { LinkRainbow } from "@/components/layout/LinkRainbow";
+import { Spacer, Scale } from "@/components/layout/Spacer";
+import { Header } from "@/components/layout/Header";
 
 import styles from "./Layout.module.scss";
 

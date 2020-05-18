@@ -1,8 +1,9 @@
-import { Layout } from "../../components/layout/Layout";
+import { useRouter } from "next/router";
 import { GetStaticProps, GetStaticPaths } from "next";
-import blogService, { IBlogArticle } from "../../services/blogService";
-import { markdownUtils } from "../../utils/markdown";
-import { DateUtils } from "../../utils/date";
+import { Layout } from "@/components/layout/Layout";
+import blogService, { IBlogArticle } from "@/services/blogService";
+import { markdownUtils } from "@/utils/markdown";
+import { DateUtils } from "@/utils/date";
 
 interface INotesPageProps extends IBlogArticle {}
 

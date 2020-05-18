@@ -1,4 +1,4 @@
-import { LinkRainbow } from "../layout/LinkRainbow";
+import { LinkRainbow } from "@/components/layout/LinkRainbow";
 
 const Links = [
   {

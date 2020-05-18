@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Spacer } from "../Spacer";
+import { Spacer } from "@/components/layout/Spacer";
 import styles from "./Header.module.scss";
 
 export const Header: React.FC<{ to?: string }> = ({ to = "/" }) => (

@@ -1,4 +1,4 @@
-import { IconEmail, IconGithub, IconLinkedin, IconTwitter } from "../../Icons";
+import { IconEmail, IconGithub, IconLinkedin, IconTwitter } from "@/components/Icons";
 import styles from "./ContactLinks.module.scss";
 
 //TODO: make `unstyled` a wrapper component

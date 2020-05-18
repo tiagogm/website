@@ -3,7 +3,7 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 // Best practice is to have a typography module
 // where you define your theme.
-import { typography } from "../../utils/typography";
+import { typography } from "@/utils/typography";
 
 const seo = {
   title: "Tiago Morais // Software development thoughts and notes",
