@@ -1,4 +1,6 @@
 import { useRouter } from "next/router";
+import DefaultErrorPage from "next/error";
+import Head from "next/head";
 import { GetStaticProps, GetStaticPaths } from "next";
 import { Layout } from "@/components/layout/Layout";
 import blogService, { IBlogArticle } from "@/services/blogService";
@@ -15,6 +17,27 @@ const RenderMarkdown: React.FC<{ content: string }> = ({ content }) => {
 };
 
 const NotesPage: React.FC<INotesPageProps> = ({ slug, title, body, publishDate }) => {
+  const { isFallback } = useRouter();
+
+  if (isFallback) {
+    return (
+      <Layout space={0}>
+        <p>Looking for those notes...</p>
+      </Layout>
+    );
+  }
+
+  if (!slug) {
+    return (
+      <>
+        <Head>
+          <meta name="robots" content="noindex" />
+        </Head>
+        <DefaultErrorPage statusCode={404} />
+      </>
+    );
+  }
+
   return (
     <Layout space={0}>
       <Layout.Title space={8}>{title}</Layout.Title>
@@ -43,7 +66,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 };
 
