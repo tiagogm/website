@@ -10,6 +10,7 @@ interface ILayoutChildren {
   Title: typeof Title;
   Subtitle: typeof SubTitle;
   LinkBack: typeof LinkBack;
+  Skeleton: typeof Skeleton;
 }
 
 interface ILayoutSpaceProps {
@@ -45,6 +46,10 @@ const Main: React.SFC<ILayoutSpaceProps> = ({ space = 64, children }) => {
   );
 };
 
+const Skeleton: React.SFC<{ height: Scale }> = ({ height }) => {
+  return <div className={styles.skeleton} style={{ height: height }}></div>;
+};
+
 type ILayoutProps = ILayoutSpaceProps & {
   headerLinkTo?: string;
 };
@@ -61,3 +66,4 @@ Layout.LinkBack = LinkBack;
 Layout.Subtitle = SubTitle;
 Layout.Main = Main;
 Layout.Title = Title;
+Layout.Skeleton = Skeleton;

@@ -48,8 +48,8 @@ export const HeadContainer: React.SFC<ISEOProps> = ({ description = seo.descript
 
       <link rel="canonical" href={canonicalUrl} />
       <link rel="icon" href="/favicon.ico" />
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      <link rel="preconnect" href="https://www.google-analytics.com" />
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" />
 
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39053104-1"></script>
@@ -59,31 +59,14 @@ export const HeadContainer: React.SFC<ISEOProps> = ({ description = seo.descript
         }}
       />
 
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-        WebFontConfig = {
-          google: { families: [ 'Raleway:300,400,500','Merriweather:300,400,400i,700,700i&display=swap' ] }
-        };
-        (function(d) {
-            var wf = d.createElement('script'), s = d.scripts[0];
-            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
-            wf.async = true;
-            s.parentNode.insertBefore(wf, s);
-        })(document);
-      `,
-        }}
+      {/* todo: self host this for perf gains  */}
+      <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Raleway:wght@300;400;500&display=swap"
+        rel="stylesheet"
       />
 
-      {/* todo: self host this for perf gains  */}
-      {/* <link
-        href="https://fonts.googleapis.com/css?family=Raleway:300,400,500|Merriweather:300,400,400i,700,700i&display=swap"
-        rel="stylesheet"
-        type="text/css"
-      ></link> */}
-
       {/* react-typography not working, prob a nextjs incompat */}
-      <style>{`${typography.toString()}`}</style>
+      <style id="typography">{`${typography.toString()}`}</style>
     </Head>
   );
 };

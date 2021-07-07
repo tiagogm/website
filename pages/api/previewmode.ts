@@ -4,7 +4,7 @@
 import { NextApiHandler } from "next";
 import { logService } from "../../services/logService";
 
-// open /api/preview from your browser.
+// open /api/previewmmode from your browser.
 export default (({ query }, res) => {
   const { clear, url } = query;
 

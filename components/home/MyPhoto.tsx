@@ -10,7 +10,7 @@ export const MyPhoto: React.FC<IMyPhotoProps> = ({ size, url, alt }) => (
   <div className="text-center">
     <picture>
       <source type="image/webp" srcSet={imgParams(url, size, `&fm=webp`)} />
-      <img src={imgParams(url, size)} alt={alt} />
+      <img width={size} height={size} src={imgParams(url, size)} alt={alt} />
     </picture>
     {/* texting jsx - so I don't have to create a whole full component (separate css file) for a basic case, single file components style */}
     <style jsx>{`
