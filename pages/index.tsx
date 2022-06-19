@@ -39,6 +39,7 @@ export const getStaticProps: GetStaticProps<IHomePageProps> = async ({ preview }
   //todo: merge staticPage with homePage, or remove slug
   const content = await fetchEntryBySlug<IHomePageContent>(preview, "homePage", "homepage");
 
+  // console.log(`getStaticProps`, content)
   return {
     props: {
       ...content?.data,

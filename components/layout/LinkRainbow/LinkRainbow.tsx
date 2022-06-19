@@ -9,7 +9,7 @@ interface ILinkRainbowProps {
   className?: string;
 }
 
-export const LinkRainbow: React.FC<ILinkRainbowProps> = ({ className, to, intent, variation, children }) => {
+export const LinkRainbow: React.FC<React.PropsWithChildren<ILinkRainbowProps>> = ({ className, to, intent, variation, children }) => {
   const cls = cx(className, styles.linkrainbow, {
     [styles[`anim-variation--${variation}`]]: !!variation,
     [styles[`linkrainbow--${intent}`]]: !!intent,
