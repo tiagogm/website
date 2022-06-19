@@ -20,7 +20,7 @@ const getCannonical = (path: string) => {
   return `${seo.ogUrl}${path.slice(0, qsIndx)}`;
 };
 
-export const HeadContainer: React.SFC<ISEOProps> = ({ description = seo.description }) => {
+export const HeadContainer: React.FunctionComponent<ISEOProps> = ({ description = seo.description }) => {
   const { asPath } = useRouter();
   const canonicalUrl = getCannonical(asPath);
 

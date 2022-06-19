@@ -1,6 +1,6 @@
 import { Remarkable } from "remarkable";
 
-import hljs from "highlight.js/lib/highlight";
+import hljs from "highlight.js";
 import javascript from "highlight.js/lib/languages/javascript";
 
 //load only required langs

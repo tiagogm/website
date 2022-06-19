@@ -15,11 +15,12 @@ interface ILayoutChildren {
 
 interface ILayoutSpaceProps {
   space?: Scale;
+  children: React.ReactNode;
 }
 
 const LinkBack: React.FC<{ to: string }> = ({ to }) => (
   <LinkRainbow variation="b" to={to}>
-    \> goto {to}
+    \&gt; goto {to}
   </LinkRainbow>
 );
 
@@ -37,7 +38,7 @@ const SubTitle: React.FC<ILayoutSpaceProps> = ({ space, children }) => (
   </>
 );
 
-const Main: React.SFC<ILayoutSpaceProps> = ({ space = 64, children }) => {
+const Main: React.FC<ILayoutSpaceProps> = ({ space = 64, children }) => {
   return (
     <>
       <main>{children}</main>
@@ -46,7 +47,7 @@ const Main: React.SFC<ILayoutSpaceProps> = ({ space = 64, children }) => {
   );
 };
 
-const Skeleton: React.SFC<{ height: Scale }> = ({ height }) => {
+const Skeleton: React.FC<{ height: Scale }> = ({ height }) => {
   return <div className={styles.skeleton} style={{ height: height }}></div>;
 };
 
