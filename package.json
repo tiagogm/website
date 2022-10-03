@@ -2,6 +2,9 @@
   "name": "tiagogm-website",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
     "start": "npm run dev",
     "dev": "next dev",
