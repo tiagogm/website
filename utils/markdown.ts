@@ -11,15 +11,15 @@ hljs.registerLanguage("js", javascript);
 var md = new Remarkable({
   langPrefix: "hljs language-",
   html: true,
-  highlight: function (str, lang) {
+  highlight: function (code, lang) {
     if (lang && hljs.getLanguage(lang)) {
       try {
-        return hljs.highlight(lang, str).value;
+        return hljs.highlight(code, { language: lang }).value;
       } catch (err) {}
     }
 
     try {
-      return hljs.highlightAuto(str).value;
+      return hljs.highlightAuto(code).value;
     } catch (err) {}
 
     return "";

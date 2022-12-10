@@ -1,5 +1,6 @@
 import React from "react";
 import Head from "next/head";
+import Script from "next/script";
 import { useRouter } from "next/router";
 // Best practice is to have a typography module
 // where you define your theme.
@@ -52,19 +53,13 @@ export const HeadContainer: React.FunctionComponent<ISEOProps> = ({ description 
       <link rel="preconnect" href="https://fonts.gstatic.com" />
 
       {/* <!-- Global site tag (gtag.js) - Google Analytics --> */}
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39053104-1"></script>
-      <script
+      <Script src="https://www.googletagmanager.com/gtag/js?id=UA-39053104-1" async />
+      {/* <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39053104-1"></script> */}
+      <Script
         dangerouslySetInnerHTML={{
           __html: `  window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-39053104-1');`,
         }}
       />
-
-      {/* todo: self host this for perf gains  */}
-      <link
-        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Raleway:wght@300;400;500&display=swap"
-        rel="stylesheet"
-      />
-
       {/* react-typography not working, prob a nextjs incompat */}
       <style id="typography">{`${typography.toString()}`}</style>
     </Head>
