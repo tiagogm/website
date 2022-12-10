@@ -22,7 +22,7 @@ const HomePage: React.FC<IHomePageProps> = ({ picture, title }) => (
   <Layout>
     <Layout.Main>
       <Spacer size={80} />
-      <MyPhoto size={80} url={`https:${picture.file.url}`} alt={picture.title} />
+      <MyPhoto size={100} url={`https:${picture.file.url}`} alt={picture.title} />
       <Spacer size={48} />
       <div>
         <h1 className="text-center">{title}</h1>
