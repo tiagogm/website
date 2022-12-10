@@ -19,7 +19,7 @@ interface ILayoutSpaceProps {
 }
 
 const LinkBack: React.FC<{ to: string }> = ({ to }) => (
-  <LinkRainbow variation="b" to={to}>
+  <LinkRainbow className={styles.layout__linkback} variation="b" to={to}>
     \&gt; goto {to}
   </LinkRainbow>
 );
