@@ -25,8 +25,8 @@ export const LinkRainbow: React.FC<React.PropsWithChildren<ILinkRainbowProps>> =
   }
 
   return (
-    <Link href={to}>
-      <a className={cls}>{children}</a>
+    <Link href={to} className={cls}>
+      {children}
     </Link>
   );
 };
