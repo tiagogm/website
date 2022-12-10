@@ -30,7 +30,7 @@ const ArticleLink: React.FC<IBlogArticleProps> = ({ slug, title, publishDate, ex
       .article-link__date {
         width: 120px;
         display: inline-block;
-        color: #c0c0c0;
+        color: #484848;
       }
       .article-link__source {
         margin-right: 0.5rem;
@@ -41,7 +41,7 @@ const ArticleLink: React.FC<IBlogArticleProps> = ({ slug, title, publishDate, ex
 
 const BlogPage: React.FC<IBlogPageProps> = ({ articles }) => (
   <Layout>
-    <Layout.Title space={64}>Notes</Layout.Title>
+    <Layout.Title space={64}>Notes on software</Layout.Title>
     <Layout.Main space={128}>{articles.map(ArticleLink)}</Layout.Main>
     <Layout.LinkBack to="/" />
   </Layout>
