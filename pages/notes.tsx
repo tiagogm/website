@@ -13,17 +13,17 @@ interface IBlogArticleProps extends IBlogArticle {
   source?: string;
 }
 
-const ArticleLink: React.FC<IBlogArticleProps> = ({ slug, title, publishDate, externalSource, externalLink }) => (
-  <div key={slug} className="article-link">
+const ArticleLink = (article: IBlogArticleProps) => (
+  <div key={article.slug} className="article-link">
     <h4>
-      <LinkRainbow to={externalLink || `notes/${slug}`}>
-        <span className="article-link__date">{DateUtils.IsoToStr(publishDate)}</span>
-        {externalSource && (
+      <LinkRainbow to={article.externalLink || `notes/${article.slug}`}>
+        <span className="article-link__date">{DateUtils.IsoToStr(article.publishDate)}</span>
+        {article.externalSource && (
           <span className="article-link__source">
-            <b>{externalSource} //</b>
+            <b>{article.externalSource} //</b>
           </span>
         )}
-        <span className="article-link__title">{title}</span>
+        <span className="article-link__title">{article.title}</span>
       </LinkRainbow>
     </h4>
     <style jsx>{`
