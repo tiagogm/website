@@ -1,4 +1,4 @@
-@import "./_variables";
+@use "./_variables" as *;
 
 html,
 body {
@@ -57,7 +57,13 @@ a {
   overflow: auto;
   padding: 1.5rem;
   font-size: inherit;
-  font-family: Consolas, Menlo, Monaco, source-code-pro, Courier New, monospace;
+  font-family:
+    Consolas,
+    Menlo,
+    Monaco,
+    source-code-pro,
+    Courier New,
+    monospace;
   font-feature-settings: normal;
 }
 
