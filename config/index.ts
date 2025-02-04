@@ -6,5 +6,4 @@ export default {
   CMS_SPACEID_SITE: process.env.CMS_SPACEID_SITE,
   CMS_ENV: "master",
   SENTRY_DSN: process.env.SENTRY_DSN,
-  NOWLOGS_SECRET: process.env.NOWLOGS_SECRET,
 };
