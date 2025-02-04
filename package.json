@@ -17,6 +17,8 @@
     "@contentful/rich-text-types": "^17.0.0",
     "@sentry/browser": "^8.54.0",
     "@sentry/node": "^8.54.0",
+    "@vercel/analytics": "^1.4.1",
+    "@vercel/speed-insights": "^1.1.0",
     "classnames": "^2.5.1",
     "contentful": "^11.4.4",
     "date-fns": "^4.1.0",
