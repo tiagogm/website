@@ -1,4 +1,4 @@
-import { IconEmail, IconGithub, IconLinkedin, IconTwitter } from "@/app/contacts/Icons";
+import { IconBsky, IconEmail, IconGithub, IconLinkedin } from "@/app/contacts/Icons";
 import styles from "./ContactLinks.module.scss";
 
 //TODO: make `unstyled` a wrapper component
@@ -9,7 +9,7 @@ export const ContactLinks = () => (
       <span>
         Email:
         <a href="mailto:rpm.tiago@gmail.com" aria-label="email link" rel="noopener">
-          rpm.tiago@gmail.com
+          <span> rpm.tiago@gmail.com</span>
         </a>
       </span>
     </li>
@@ -18,7 +18,7 @@ export const ContactLinks = () => (
       <span>
         Github:
         <a href="https://github.com/tiagogm" aria-label="github profile" rel="noopener">
-          /tiagogm
+          <span> /tiagogm</span>
         </a>
       </span>
     </li>
@@ -27,16 +27,16 @@ export const ContactLinks = () => (
       <span>
         Linkedin:
         <a href="https://www.linkedin.com/in/tmorais/" aria-label="linkedin profile" rel="noopener">
-          /in/tmorais
+          <span> /in/tmorais</span>
         </a>
       </span>
     </li>
     <li>
-      <IconTwitter />
+      <IconBsky />
       <span>
         Twitter:
         <a href="https://@tgmorais.bsky.social" aria-label="bluesky profile">
-          @tgmorais.bsky.social
+          <span> @tgmorais.bsky.social</span>
         </a>
       </span>
     </li>

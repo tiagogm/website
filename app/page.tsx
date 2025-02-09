@@ -27,7 +27,7 @@ export default async function HomePage() {
         <Spacer size={48} />
         <div>
           <h1 className="text-center">{title}</h1>
-          <hr />
+          <br />
           <SiteLinks />
           <Spacer size={72} />
           <SocialLinks />
