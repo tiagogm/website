@@ -1,4 +1,4 @@
-import { IconEmail, IconGithub, IconLinkedin, IconTwitter } from "@/components/Icons";
+import { IconEmail, IconGithub, IconLinkedin, IconTwitter } from "@/app/contacts/Icons";
 import styles from "./ContactLinks.module.scss";
 
 //TODO: make `unstyled` a wrapper component
@@ -35,8 +35,8 @@ export const ContactLinks = () => (
       <IconTwitter />
       <span>
         Twitter:
-        <a href="https://twitter.com/_tiagogm" aria-label="twitter profile">
-          _tiagogm
+        <a href="https://@tgmorais.bsky.social" aria-label="bluesky profile">
+          @tgmorais.bsky.social
         </a>
       </span>
     </li>

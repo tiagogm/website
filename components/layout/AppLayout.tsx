@@ -1,9 +1,8 @@
-import { HeadContainer } from "@/components/layout/HeadContainer";
 import { LinkRainbow } from "@/components/layout/LinkRainbow";
 import { Spacer, Scale } from "@/components/layout/Spacer";
 import { Header } from "@/components/layout/Header";
 
-import styles from "./Layout.module.scss";
+import styles from "./AppLayout.module.scss";
 
 interface ILayoutChildren {
   Main: typeof Main;
@@ -55,16 +54,15 @@ type ILayoutProps = ILayoutSpaceProps & {
   headerLinkTo?: string;
 };
 
-export const Layout: React.FC<ILayoutProps> & ILayoutChildren = ({ headerLinkTo, children }) => (
+export const AppLayout: React.FC<ILayoutProps> & ILayoutChildren = ({ headerLinkTo, children }) => (
   <div className={styles.layout}>
     <Header to={headerLinkTo} />
-    <HeadContainer />
     {children}
   </div>
 );
 
-Layout.LinkBack = LinkBack;
-Layout.Subtitle = SubTitle;
-Layout.Main = Main;
-Layout.Title = Title;
-Layout.Skeleton = Skeleton;
+AppLayout.LinkBack = LinkBack;
+AppLayout.Subtitle = SubTitle;
+AppLayout.Main = Main;
+AppLayout.Title = Title;
+AppLayout.Skeleton = Skeleton;
