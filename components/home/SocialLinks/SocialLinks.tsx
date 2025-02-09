@@ -1,4 +1,4 @@
-import { IconGithub, IconLinkedin, IconTwitter } from "@/app/contacts/Icons";
+import { IconGithub, IconLinkedin, IconBsky } from "@/app/contacts/Icons";
 import styles from "./SocialLinks.module.scss";
 
 export const SocialLinks = () => (
@@ -9,8 +9,8 @@ export const SocialLinks = () => (
     <a className="linkedin" target="_blank" href="https://www.linkedin.com/in/tmorais">
       <IconLinkedin />
     </a>
-    <a className="twitter" target="_blank" href="https://twitter.com/_TGMorais">
-      <IconTwitter />
+    <a className="bluesky" target="_blank" href="https://@tgmorais.bsky.social">
+      <IconBsky />
     </a>
   </div>
 );
