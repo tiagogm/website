@@ -4,8 +4,10 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "highlight.js/styles/vs2015.css";
 import { typography } from "@/utils/typography";
+import { ThemeProvider } from "@/contexts/ThemeContext";
 
 import "../styles/app.scss";
+import "../styles/highlight.scss";
 
 const seo = {
   title: "Tiago Morais // Software development thoughts and notes",
@@ -14,7 +16,7 @@ const seo = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#03579e",
+  themeColor: "media",
   width: "device-width",
   initialScale: 1,
 };
@@ -53,11 +55,24 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Force high-priority meta tags */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        {/* Prevent flash of wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const theme = localStorage.getItem('theme-preference') || 'system';
+                const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const resolvedTheme = theme === 'system' ? systemTheme : theme;
+                document.documentElement.setAttribute('data-theme', resolvedTheme);
+              })();
+            `,
+          }}
+        />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -68,7 +83,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <style id="typography">{`${typography.toString()}`}</style>
       </head>
       <body>
-        {children}
+        <ThemeProvider>
+          {children}
+        </ThemeProvider>
         <SpeedInsights />
         <Analytics />
       </body>

@@ -4,10 +4,12 @@ html,
 body {
   padding: 0;
   margin: 0;
-  color: var(--pallete-black);
+  background-color: var(--pallete-background);
+  color: var(--pallete-text-primary);
   //reduce CLS
   font-size: 18px;
   line-height: 1.5;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1,
@@ -19,7 +21,7 @@ h4 {
 }
 
 body {
-  border-top: 2px solid var(--pallete-blue);
+  border-top: 2px solid var(--pallete-accent);
 }
 
 * {
@@ -47,7 +49,8 @@ hr {
 
 a {
   text-decoration: none;
-  color: var(--pallete-blue);
+  color: var(--pallete-accent);
+  transition: color 0.2s ease;
 }
 
 .hljs {

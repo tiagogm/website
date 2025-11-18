@@ -1,0 +1,68 @@
+// Light mode highlight.js theme (vs2015)
+// Imported in layout.tsx directly
+
+// Dark mode highlight.js theme override
+// When dark mode is active, override highlight.js styles
+[data-theme="dark"] {
+  .hljs {
+    background: #0d1117 !important;
+    color: #c9d1d9 !important;
+  }
+
+  .hljs-comment,
+  .hljs-quote {
+    color: #8b949e !important;
+  }
+
+  .hljs-variable,
+  .hljs-template-variable,
+  .hljs-tag,
+  .hljs-name,
+  .hljs-selector-id,
+  .hljs-selector-class,
+  .hljs-regexp,
+  .hljs-deletion {
+    color: #ff7b72 !important;
+  }
+
+  .hljs-number,
+  .hljs-built_in,
+  .hljs-builtin-name,
+  .hljs-literal,
+  .hljs-type,
+  .hljs-params,
+  .hljs-meta,
+  .hljs-link {
+    color: #79c0ff !important;
+  }
+
+  .hljs-attribute {
+    color: #d2a8ff !important;
+  }
+
+  .hljs-string,
+  .hljs-symbol,
+  .hljs-bullet,
+  .hljs-addition {
+    color: #a5d6ff !important;
+  }
+
+  .hljs-title,
+  .hljs-section {
+    color: #d2a8ff !important;
+  }
+
+  .hljs-keyword,
+  .hljs-selector-tag {
+    color: #ff7b72 !important;
+  }
+
+  .hljs-emphasis {
+    font-style: italic;
+  }
+
+  .hljs-strong {
+    font-weight: bold;
+  }
+}
+
