@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import "highlight.js/styles/vs2015.css";
 import { typography } from "@/utils/typography";
+import { ThemeProvider } from "@/components/layout/ThemeProvider";
 
 import "../styles/app.scss";
 
@@ -53,11 +54,32 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         {/* Force high-priority meta tags */}
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        {/* SSR-safe theme initialization to prevent flash */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const themeKey = 'theme-preference';
+                const stored = localStorage.getItem(themeKey);
+                let theme = 'light';
+                
+                if (stored === 'light' || stored === 'dark') {
+                  theme = stored;
+                } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                  theme = 'dark';
+                }
+                
+                document.documentElement.setAttribute('data-theme', theme);
+              })();
+            `,
+          }}
+        />
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -68,7 +90,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <style id="typography">{`${typography.toString()}`}</style>
       </head>
       <body>
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
         <SpeedInsights />
         <Analytics />
       </body>

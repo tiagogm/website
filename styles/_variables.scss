@@ -1,8 +1,42 @@
-:root {
+// Light theme (default)
+:root,
+[data-theme="light"] {
+  --palette-bg: #ffffff;
+  --palette-text: #000000;
+  --palette-text-secondary: #686767;
+  --palette-card: #ffffff;
+  --palette-border: #e1e1e1;
+  --palette-accent: #03579e;
+  --palette-code-bg: #f1f1f1;
+  --palette-code-border: #e1e1e1;
+  --palette-hr: #e1e1e1;
+
+  // Legacy variables for backward compatibility
   --pallete-black: #000;
   --pallete-blue: #03579e;
   --pallete-grey--light: #f1f1f1;
-
+  --pallete-grey--mid: #e1e1e1;
   --pallete-code-bg: #f1f1f1;
   --pallete-code-border: #e1e1e1;
+}
+
+// Dark theme
+[data-theme="dark"] {
+  --palette-bg: #1a1a1a;
+  --palette-text: #e0e0e0;
+  --palette-text-secondary: #a0a0a0;
+  --palette-card: #252525;
+  --palette-border: #404040;
+  --palette-accent: #4a9eff;
+  --palette-code-bg: #2d2d2d;
+  --palette-code-border: #404040;
+  --palette-hr: #404040;
+
+  // Legacy variables for backward compatibility
+  --pallete-black: #e0e0e0;
+  --pallete-blue: #4a9eff;
+  --pallete-grey--light: #2d2d2d;
+  --pallete-grey--mid: #404040;
+  --pallete-code-bg: #2d2d2d;
+  --pallete-code-border: #404040;
 }
