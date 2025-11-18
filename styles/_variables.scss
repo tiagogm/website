@@ -1,8 +1,53 @@
 :root {
+  // Base palette colors (light mode)
   --pallete-black: #000;
   --pallete-blue: #03579e;
   --pallete-grey--light: #f1f1f1;
-
   --pallete-code-bg: #f1f1f1;
   --pallete-code-border: #e1e1e1;
+
+  // Semantic color variables (light mode)
+  --color-bg-primary: #fff;
+  --color-bg-secondary: #f1f1f1;
+  --color-bg-code: #f1f1f1;
+
+  --color-text-primary: #000;
+  --color-text-secondary: #484848;
+  --color-text-tertiary: #686767;
+
+  --color-accent-primary: #03579e;
+  --color-accent-hover: #024678;
+
+  --color-border-primary: #e1e1e1;
+  --color-border-secondary: #d0d0d0;
+
+  --color-selection-bg: #03579e;
+  --color-selection-text: #fff;
+}
+
+// Dark mode color overrides
+[data-theme="dark"] {
+  // Dark mode palette
+  --pallete-black: #fff;
+  --pallete-grey--light: #2a2a2a;
+  --pallete-code-bg: #1e1e1e;
+  --pallete-code-border: #3a3a3a;
+
+  // Semantic colors (dark mode)
+  --color-bg-primary: #0d1117;
+  --color-bg-secondary: #161b22;
+  --color-bg-code: #1e1e1e;
+
+  --color-text-primary: #e6edf3;
+  --color-text-secondary: #8b949e;
+  --color-text-tertiary: #6e7681;
+
+  --color-accent-primary: #58a6ff;
+  --color-accent-hover: #79c0ff;
+
+  --color-border-primary: #30363d;
+  --color-border-secondary: #21262d;
+
+  --color-selection-bg: #58a6ff;
+  --color-selection-text: #0d1117;
 }
