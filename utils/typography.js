@@ -8,19 +8,8 @@ export const typography = new Typography({
   headerWeight: "300",
   bodyWeight: "300",
   boldWeight: "600",
+  // Colors are handled via CSS variables in app.scss for dark mode support
   overrideStyles: ({ adjustFontSizeTo, rhythm }, options, styles) => ({
-    // h1: {
-    //   ...adjustFontSizeTo("2.5rem"),
-    // },
-    // h2: {
-    //   ...adjustFontSizeTo("2.2rem"),
-    // },
-    // h3: {
-    //   ...adjustFontSizeTo("2rem"),
-    // },
-    // p: {
-    //   ...adjustFontSizeTo("18px"),
-    // },
     "pre,code": {
       fontSize: "14px",
     },

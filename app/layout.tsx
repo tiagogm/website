@@ -2,8 +2,9 @@ import { Metadata, Viewport } from "next";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
-import "highlight.js/styles/vs2015.css";
 import { typography } from "@/utils/typography";
+import { ThemeProvider, THEME_STORAGE_KEY } from "@/contexts/ThemeContext";
+import { HighlightTheme } from "@/components/layout/HighlightTheme";
 
 import "../styles/app.scss";
 
@@ -59,18 +60,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+        {/* Prevent flash of wrong theme */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  const stored = localStorage.getItem('${THEME_STORAGE_KEY}');
+                  const theme = (stored === 'light' || stored === 'dark')
+                    ? stored
+                    : (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                  document.documentElement.setAttribute('data-theme', theme);
+                } catch (e) {}
+              })();
+            `,
+          }}
+        />
+
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
           href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600;1,700&family=Raleway:wght@300;400;500&display=swap"
           rel="stylesheet"
         />
-        <style id="typography">{`${typography.toString()}`}</style>
+        <style id="typography">{`@layer typography { ${typography.toString()} }`}</style>
       </head>
       <body>
-        {children}
-        <SpeedInsights />
-        <Analytics />
+        <ThemeProvider>
+          <HighlightTheme />
+          {children}
+          <SpeedInsights />
+          <Analytics />
+        </ThemeProvider>
       </body>
     </html>
   );
