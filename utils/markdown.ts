@@ -27,7 +27,19 @@ var md = new Remarkable({
 });
 
 const parseToHTML = (body: String) => {
-  return md.render(body);
+  let html = md.render(body);
+
+  // Post-process HTML to add target="_blank" to external links
+  // Match <a href="http(s)://..."> tags and add target and rel attributes
+  html = html.replace(/<a href="(https?:\/\/[^"]+)"([^>]*)>/g, (match, url, rest) => {
+    // Check if target is already present
+    if (rest.includes("target=")) {
+      return match;
+    }
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer"${rest}>`;
+  });
+
+  return html;
 };
 
 export const markdownUtils = {
