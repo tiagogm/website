@@ -7,3 +7,12 @@
 .articlelink__source {
   margin-right: 0.5rem;
 }
+
+/* Mobile: Stack date and title vertically for better readability */
+@media (max-width: 768px) {
+  .articlelink__date {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.25rem;
+  }
+}
