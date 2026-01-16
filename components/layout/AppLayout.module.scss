@@ -5,6 +5,14 @@
   padding: 2.625rem 1.3125rem;
 }
 
+/* Mobile: Reduce padding and margin for better space usage */
+@media (max-width: 768px) {
+  .layout {
+    padding: 1.5rem 1rem;
+    margin-top: 3rem;
+  }
+}
+
 .layout__subtitle {
   color: var(--color-text-tertiary);
 }
