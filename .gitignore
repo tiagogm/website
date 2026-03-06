@@ -35,3 +35,4 @@ yarn-error.log*
 .vercel
 .env*.local
 .kiro/
+.claude/settings.local.json
