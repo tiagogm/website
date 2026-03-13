@@ -32,7 +32,7 @@
     "sass": "^1.93.0",
     "typography": "^0.16.24",
     "urljoin": "^0.1.5",
-    "vercel": "^48.1.0"
+    "vercel": "^50.32.5"
   },
   "devDependencies": {
     "@types/node": "^24.5.2",
